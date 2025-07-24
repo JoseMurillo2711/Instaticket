@@ -1,0 +1,114 @@
+<!-- users.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Instaticket — Users Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <!-- Sidebar navigation -->
+    <ul>
+      <li><a href="users.html" class="active">Users</a></li>
+      <li><a href="templates.html">Templates</a></li>
+      <!-- más opciones -->
+    </ul>
+
+    <div class="sidebar-footer">
+    <div class="user-info">
+      <span class="avatar"></span>
+      <span>Evans Cooper</span>
+    </div>
+    <a href="login.html" class="logout-button">Cerrar Sesión</a>
+  </div>
+  </nav>
+
+  <main class="with-sidebar container">
+    <header class="main-header" style="background:none; color: var(--color-dark); padding:0;">
+      <h1>Hello Evans</h1>
+    </header>
+
+    <section class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h2>All Users</h2>
+          <p>Active Members</p>
+        </div>
+        <!-- Add User button -->
+        <a href="add_user.html" class="button button-primary">
+          + Add User
+        </a>
+      </div>
+
+      <!-- Search y filtro -->
+      <div style="margin-top:1rem;">
+        <input type="text" placeholder="Search">
+        <select>
+          <option>Sort by: Newest</option>
+          <option>Sort by: Oldest</option>
+        </select>
+      </div>
+
+      <!-- Lista de usuarios en tarjetas -->
+      <div class="grid-3" style="margin-top:1.5rem;">
+        <!-- Ejemplo de user card -->
+        <div class="card">
+          <h3>Jane Cooper</h3>
+          <p>Microsoft</p>
+          <p>(225) 555-018</p>
+          <p>jane.cooper@example.com</p>
+          <p>USA</p>
+          <span class="badge badge-active">Active</span>
+        </div>
+
+        <div class="card">
+          <h3>Floyd Miles</h3>
+          <p>Yahoo</p>
+          <p>(305) 555-013</p>
+          <p>floyd.miles@example.com</p>
+          <p>Canada</p>
+          <span class="badge badge-active">Active</span>
+        </div>
+
+        <div class="card">
+          <h3>Kristin Watson</h3>
+          <p>Google</p>
+          <p>(702) 555-012</p>
+          <p>kristin.watson@example.com</p>
+          <p>UK</p>
+          <span class="badge badge-inactive">Inactive</span>
+        </div>
+
+        <div class="card">
+          <h3>Cody Fisher</h3>
+          <p>Facebook</p>
+          <p>(800) 555-011</p>
+          <p>cody.fisher@example.com</p>
+          <p>Germany</p>
+          <span class="badge badge-active">Active</span>
+        </div>
+
+        <div class="card">
+          <h3>Esther Howard</h3>
+          <p>Apple</p>
+          <p>(415) 555-010</p>
+          <p>esther.howard@example.com</p>
+          <p>France</p>
+          <span class="badge badge-inactive">Inactive</span>
+        </div>
+      </div>
+
+      <!-- Footer de la sección -->
+      <footer class="app-footer">
+        <p>Upgrade to PRO to get access all Features! 
+          <a href="#">Get Pro Now!</a>
+        </p>
+        <p>Evano – Project Manager</p>
+        <p>Showing data 1 to 8 of 256k entries</p>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

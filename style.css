@@ -1,0 +1,222 @@
+/* style.css */
+/* Reset básico y variables de color */
+:root {
+  --color-primary: #e63946;   /* red accent */
+  --color-dark: #1d1d1d;      /* lead/black */
+  --color-light: #f1f1f1;     /* light background */
+  --font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+
+/* Sidebar Navigation */
+nav.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  background-color: var(--color-dark);
+  color: white;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+}
+
+nav.sidebar ul {
+  list-style: none;
+}
+
+nav.sidebar li {
+  margin-bottom: 1rem;
+}
+
+nav.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out, color 0.2s;
+}
+
+nav.sidebar a:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+nav.sidebar a.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Main content shifted by sidebar */
+main.with-sidebar {
+  margin-left: 240px;
+  padding: 2rem;
+}
+
+/* Header common */
+header.main-header {
+  background-color: var(--color-dark);
+  color: white;
+  padding: 1rem 2rem;
+}
+
+/* Container utility */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+}
+
+/* Form elements */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Grid layouts */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.grid-kanban {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.badge-active {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-inactive {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Footer */
+footer.app-footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+/* --- en style.css --- */
+
+/* Sidebar flex para footer */
+nav.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Footer del sidebar */
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+/* Información de usuario */
+.sidebar-footer .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Avatar circular (opcional) */
+.sidebar-footer .user-info .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #666;
+  display: inline-block;
+  /* Si tienes img, usa object-fit: cover; */
+}
+
+/* Botón Cerrar Sesión */
+.sidebar-footer .logout-button {
+  display: block;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.5);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-footer .logout-button:hover {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+

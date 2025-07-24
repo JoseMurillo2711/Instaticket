@@ -1,0 +1,85 @@
+/* edit_style.css */
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; font-family: Arial, sans-serif; }
+.editor-container { display:flex; height:100%; }
+
+/* PANEL IZQUIERDO */
+.panel-left { width:75%; display:flex; flex-direction:column; }
+.header-left {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0.5rem; background:#fafafa; border-bottom:1px solid #ddd;
+}
+.map-controls { display:flex; gap:0.5rem; align-items:center; }
+.map-wrapper { flex:1; overflow:scroll; background:#eee; }
+.map-scale {
+  position:relative; transform:scale(1); transform-origin:top left;
+  width:800px; height:600px;
+}
+.map-bg { display:block; width:100%; height:auto; }
+
+/* INPUT+LABEL TOGGLE */
+.map-scale input[type="checkbox"] { display:none; }
+.map-scale input[type="checkbox"] + label.seat {
+  position:absolute; width:20px; height:20px; border-radius:50%;
+  border:1px solid #444; background:#4caf50; cursor:pointer;
+}
+.map-scale input:checked + label.seat { background:#f44336; }
+
+/* Estados estáticos reservados */
+.map-scale label.seat.reserved { background:#ffeb3b !important; }
+
+/* Secciones */
+.seat-section::before {
+  content:attr(data-section);
+  position:absolute; top:-20px; left:0;
+  font-weight:bold; font-size:0.9rem;
+}
+
+/* Puntos de interés */
+.poi {
+  position:absolute; padding:0.3rem 0.5rem;
+  background:rgba(255,255,255,0.8); border-radius:4px;
+  font-size:0.9rem; pointer-events:none;
+}
+.poi.stage    { top:250px; left:250px; }
+.poi.restroom { top:600px;  left: 50px; }
+.poi.exit     { top:300px;  left:750px; }
+.poi.scale    { top: 10px;  right:10px; }
+
+/* PANEL DERECHO */
+.panel-right {
+  width:25%; padding:1rem; background:#fafafa;
+  border-left:1px solid #ddd; overflow-y:auto;
+}
+.panel-right h2 {
+  margin-top:1rem; margin-bottom:0.5rem;
+  font-size:1.1rem; border-bottom:1px solid #ccc; padding-bottom:0.3rem;
+}
+.form-group { margin:0.5rem 0 1rem; }
+.form-group label { display:block; margin-bottom:0.3rem; font-size:0.9rem; }
+.form-group input,
+.form-group select {
+  width:100%; padding:0.4rem; border:1px solid #ccc; border-radius:4px;
+}
+.form-group.toggle {
+  display:flex; align-items:center; justify-content:space-between;
+}
+.legend { list-style:none; margin:0.5rem 0; }
+.legend li { display:flex; align-items:center; margin-bottom:0.4rem; }
+.legend-color {
+  display:inline-block; width:16px; height:16px;
+  margin-right:0.5rem; border:1px solid #444;
+}
+.legend-color.available { background:#4caf50; }
+.legend-color.sold      { background:#f44336; }
+.legend-color.reserved  { background:#ffeb3b; }
+.hint { font-size:0.85rem; color:#666; margin-bottom:1rem; }
+
+/* BOTONES */
+.btn {
+  padding:0.4rem 0.8rem; border:none; border-radius:4px;
+  cursor:pointer; font-size:0.9rem; text-decoration:none;
+}
+.btn.full { width:100%; margin-bottom:0.5rem; text-align:center; }
+.btn.primary { background:#e63946; color:#fff; }
+.btn.secondary { background:#ccc; color:#333; }

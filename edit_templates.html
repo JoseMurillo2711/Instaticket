@@ -1,0 +1,119 @@
+<!-- edit_templates.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Instaticket — Edit Template</title>
+  <link rel="stylesheet" href="edit_style.css">
+</head>
+<body>
+  <div class="editor-container">
+
+    <!-- Panel izquierdo -->
+    <div class="panel-left">
+      <div class="header-left">
+        <!-- Back button -->
+        <a href="templates.html" class="btn secondary">&larr; Back to Templates</a>
+        <div class="map-controls">
+          <button class="btn" id="zoom-in">Zoom In</button>
+          <button class="btn" id="zoom-out">Zoom Out</button>
+          <label><input type="checkbox" /> Selección individual</label>
+        </div>
+      </div>
+
+      <div class="map-wrapper">
+        <div class="map-scale">
+          <img src="images/map3.png" alt="Seating map" class="map-bg">
+
+          <!-- Sección General Sur, fila 1 -->
+          <div class="seat-section" data-section="General Sur">
+            <!-- input+label para toggle estado -->
+            <input type="checkbox" id="gs-1" />
+            <label for="gs-1" class="seat" style="top:400px; left:640px;"></label>
+
+            <input type="checkbox" id="gs-2" />
+            <label for="gs-2" class="seat" style="top:425px; left:630px;"></label>
+
+            <input type="checkbox" id="gs-3" />
+            <label for="gs-3" class="seat reserved" style="top:375px; left:645px;"></label>
+
+            <input type="checkbox" id="gs-4" />
+            <label for="gs-4" class="seat" style="top:450px; left:650px;"></label>
+          </div>
+
+          <!-- Sección General Sur, fila 2 -->
+          <div class="seat-section" data-section="General Sur">
+            <input type="checkbox" id="gs-5" />
+            <label for="gs-5" class="seat" style="top:475px; left:635px;"></label>
+
+            <input type="checkbox" id="gs-6" />
+            <label for="gs-6" class="seat sold" style="top:425px; left:660px;"></label>
+
+            <input type="checkbox" id="gs-7" />
+            <label for="gs-7" class="seat" style="top:400px; left:670px;"></label>
+          </div>
+
+          <!-- Iconos de interés -->
+          <div class="poi stage">🎭 Escenario</div>
+          <div class="poi restroom">🚻 Baños</div>
+          <div class="poi exit">🏃‍♂️ Salida</div>
+          <div class="poi scale">📏 0 m — 10 m</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel derecho -->
+    <aside class="panel-right">
+      <h2>🎯 Agregar elementos</h2>
+      <button class="btn full">Añadir fila de asientos</button>
+      <button class="btn full">Añadir mesas</button>
+      <div class="form-group">
+        <label>Número de mesas</label><input type="number" placeholder="e.g. 5">
+      </div>
+      <div class="form-group">
+        <label>Sillas por mesa</label><input type="number" placeholder="e.g. 4">
+      </div>
+
+      <h2>🏷️ Clasificar localidades</h2>
+      <div class="form-group">
+        <label>Sección</label>
+        <select>
+          <option>General Sur</option>
+          <option>VIP</option>
+          <option>Invitados</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tipo</label>
+        <select><option>VIP</option><option>General</option><option>Invitados</option></select>
+      </div>
+      <div class="form-group toggle">
+        <label>Cerrado</label><input type="checkbox">
+      </div>
+
+      <h2>🚻 Puntos de interés</h2>
+      <div class="form-group">
+        <label>Insertar ícono</label>
+        <select><option>Baños</option><option>Salida</option><option>Entrada</option></select>
+      </div>
+
+      <h2>📏 Escala</h2>
+      <p>Distancia: <strong>0 m — 10 m</strong></p>
+
+      <h2>🎨 Estado visual</h2>
+      <ul class="legend">
+        <li><span class="legend-color available"></span> Disponible</li>
+        <li><span class="legend-color sold"></span> Vendido</li>
+        <li><span class="legend-color reserved"></span> Reservado</li>
+      </ul>
+      <p class="hint">Haz clic en un asiento para cambiar su estado</p>
+
+      <div class="actions">
+        <button class="btn secondary">Cancel</button>
+        <a href="templates.html" class="btn primary" style="margin-right:0.5rem;">💾 Save Changes</a>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
